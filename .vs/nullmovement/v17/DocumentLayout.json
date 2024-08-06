@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\samue\\source\\repos\\nullmovement\\",
+  "WorkspaceRootPath": "C:\\Users\\samue\\source\\repos\\nullmovement\\Nullmov\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6404E253-4A8E-4C25-BBD7-44CE34D3E6E3}|nullmovement\\nullmovement.vcxproj|C:\\Users\\samue\\source\\repos\\nullmovement\\nullmovement\\nullmovement.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6404E253-4A8E-4C25-BBD7-44CE34D3E6E3}|nullmovement\\nullmovement.vcxproj|C:\\Users\\samue\\source\\repos\\nullmovement\\Nullmov\\nullmovement\\nullmovement.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6404E253-4A8E-4C25-BBD7-44CE34D3E6E3}|nullmovement\\nullmovement.vcxproj|solutionrelative:nullmovement\\nullmovement.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,13 +20,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "nullmovement.cpp",
-              "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\nullmovement\\nullmovement\\nullmovement.cpp",
+              "DocumentMoniker": "C:\\Users\\samue\\source\\repos\\nullmovement\\Nullmov\\nullmovement\\nullmovement.cpp",
               "RelativeDocumentMoniker": "nullmovement\\nullmovement.cpp",
-              "ToolTip": "C:\\Users\\samue\\source\\repos\\nullmovement\\nullmovement\\nullmovement.cpp",
+              "ToolTip": "C:\\Users\\samue\\source\\repos\\nullmovement\\Nullmov\\nullmovement\\nullmovement.cpp",
               "RelativeToolTip": "nullmovement\\nullmovement.cpp",
-              "ViewState": "AQIAAHYAAAAAAAAAAADwv4IAAAAAAAAA",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAAwHQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-05T14:02:14.688Z",
+              "WhenOpened": "2024-08-06T10:08:58.975Z",
               "EditorCaption": ""
             }
           ]

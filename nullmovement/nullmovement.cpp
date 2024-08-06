@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Mapa para almacenar el estado de las teclas
+// Mapa para almacenar el estado de las teclas físicas
 unordered_map<int, bool> keyStates;
 int lastKey = 0; // Última tecla activa
 
@@ -30,17 +30,11 @@ void onKeyDown(int vkCode) {
     }
 
     if (keyStates[vkCode]) {
-        // La tecla ya está presionada
+        // La tecla ya está presionada físicamente
         return;
     }
 
     keyStates[vkCode] = true;
-
-    // Si hay una tecla activa (lastKey) y es diferente de la actual, desactivarla
-    if (lastKey && lastKey != vkCode) {
-        keystroke(lastKey, false); // Soltar la última tecla
-        cout << "Tecla desactivada: " << hex << lastKey << endl; // Mensaje de depuración
-    }
 
     // Activar la nueva tecla
     keystroke(vkCode, true);
@@ -56,33 +50,28 @@ void onKeyUp(int vkCode) {
     }
 
     if (!keyStates[vkCode]) {
-        // La tecla no estaba presionada
+        // La tecla no estaba presionada físicamente
         return;
     }
 
     keyStates[vkCode] = false;
 
-    // Si la tecla soltada es la última tecla activa, buscar otra tecla presionada para activar
-    if (vkCode == lastKey) {
-        lastKey = 0; // Resetear lastKey
+    // Soltar la tecla que fue soltada
+    keystroke(vkCode, false);
+    cout << "Tecla soltada: " << hex << vkCode << endl; // Mensaje de depuración
 
-        // Buscar otra tecla presionada para activar
-        for (const auto& keyState : keyStates) {
-            if (keyState.second) {
-                keystroke(keyState.first, true); // Activar la tecla presionada
-                lastKey = keyState.first;
-                cout << "Tecla reactivada: " << hex << lastKey << endl; // Mensaje de depuración
-                return; // Salir del bucle si se encontró una tecla activa
-            }
+    // Buscar otra tecla presionada para activar
+    for (const auto& keyState : keyStates) {
+        if (keyState.second) {
+            // Simular la pulsación nuevamente y mantenerla activa
+            keystroke(keyState.first, true);
+            lastKey = keyState.first;
+            cout << "Tecla reactivada: " << hex << lastKey << endl; // Mensaje de depuración
+            return; // Salir del bucle si se encontró una tecla activa
         }
     }
 
-    // Si no hay teclas activas, asegúrate de soltar la tecla que fue soltada
-    if (keyStates[vkCode] == false) {
-        keystroke(vkCode, false);
-    }
-
-    cout << "Tecla soltada: " << hex << vkCode << endl; // Mensaje de depuración
+    lastKey = 0; // Resetear lastKey si no hay ninguna tecla presionada
 }
 
 HHOOK hHook = NULL;
@@ -126,5 +115,5 @@ int main() {
     UnhookWindowsHookEx(hHook);
     cout << "Programa terminado." << endl;
 
-    return 0;
+    return 0; 
 }
